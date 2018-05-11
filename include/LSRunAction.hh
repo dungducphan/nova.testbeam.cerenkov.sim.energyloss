@@ -2,7 +2,6 @@
 #define LSRunAction_h 1
 
 #include "G4UserRunAction.hh"
-#include "G4Parameter.hh"
 #include "G4RunManager.hh"
 #include "G4Run.hh"
 #include "globals.hh"
