@@ -8,7 +8,6 @@ LSDetectorConstruction::~LSDetectorConstruction() {
 
 void LSDetectorConstruction::BuildMaterial() {
   G4NistManager * nist = G4NistManager::Instance();
-  G4double z, a, density;
 
   // Air
   fAir = nist->FindOrBuildMaterial("G4_AIR");
