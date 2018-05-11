@@ -11,6 +11,8 @@ void LSDetectorConstruction::BuildMaterial() {
 
   // Air
   fAir = nist->FindOrBuildMaterial("G4_AIR");
+
+  // CO2
   fCO2 = nist->FindOrBuildMaterial("G4_CARBON_DIOXIDE");
 
   return;
