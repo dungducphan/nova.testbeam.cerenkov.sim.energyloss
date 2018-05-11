@@ -46,6 +46,17 @@ private:
   G4VPhysicalVolume * co2Phy;
 
   /**
+   * Fake TOF VOLUME (Sensitive detectors)
+   */
+  G4double tof_hx = 13 * cm;
+  G4double tof_hy = 13 * cm;
+  G4double tof_hz = 1 * mm;
+  G4Box * tofBox;
+  G4LogicalVolume * tofLog;
+  G4VPhysicalVolume * tofPhy_us, * tofPhy_ds;
+  G4double tof_z = world_hz/2 - tof_hz/2;
+
+  /**
    * Kapton VOLUME
    */
   G4double kapton_hx = 1.0 * m;
