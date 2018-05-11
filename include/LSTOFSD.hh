@@ -19,7 +19,6 @@ public:
   // methods from base class
   virtual void   Initialize(G4HCofThisEvent*);
   virtual G4bool ProcessHits(G4Step*, G4TouchableHistory*);
-  G4bool ProcessHits_constStep(const G4Step*, G4TouchableHistory* );
 
 private:
   LSTOFHitsCollection* fTOFHitCollection;
