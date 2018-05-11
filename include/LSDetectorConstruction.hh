@@ -22,6 +22,7 @@ public:
   LSDetectorConstruction();
   virtual ~LSDetectorConstruction();
   virtual G4VPhysicalVolume* Construct();
+  virtual void ConstructSDandField();
   virtual void BuildMaterial();
 
 private:
@@ -61,7 +62,7 @@ private:
    */
   G4double kapton_hx = 1.0 * m;
   G4double kapton_hy = 1.0 * m;
-  G4double kapton_hz = 1.0 * mm;
+  G4double kapton_hz = 0.1 * mm;
   G4Box * kaptonBox;
   G4LogicalVolume * kaptonLog;
   G4VPhysicalVolume * kaptonPhy_us, * kaptonPhy_ds; // upstream + downstream
