@@ -44,6 +44,7 @@ target_link_libraries(LSsim ${Geant4_LIBRARIES})
 set(LSsim_SCRIPTS
   vis.mac
   gui.mac
+  run.mac
   )
 
 foreach(_script ${LSsim_SCRIPTS})
