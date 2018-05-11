@@ -35,39 +35,21 @@ private:
   G4VPhysicalVolume * worldPhy;
 
   /**
-   * LAr VOLUME
+   * CO2 VOLUME
    */
-  G4double larvol_hx = 3.0 * m;
-  G4double larvol_hy = 3.0 * m;
-  G4double larvol_hz = 3.0 * m;
-  G4Box * larvolBox;
-  G4LogicalVolume * larvolLog;
-  G4VPhysicalVolume * larvolPhy;
+  G4double co2_hx = 2.0 * m;
+  G4double co2_hy = 2.0 * m;
+  G4double co2_hz = 2.0 * m;
+  G4Box * co2Box;
+  G4LogicalVolume * co2Log;
+  G4VPhysicalVolume * co2Phy;
 
-  /**
-   * LAr HOUSING
-   */
-  G4double larhouse_thickx = 10.0 * cm; // Wall thickness
-  G4double larhouse_thicky = 10.0 * cm;
-  G4double larhouse_thickz = 10.0 * cm;
-  G4double larhouse_hx = larvol_hx + larhouse_thickx * 2.;
-  G4double larhouse_hy = larvol_hy + larhouse_thicky * 2.;
-  G4double larhouse_hz = larvol_hz + larhouse_thickz * 2.;
-  G4Box * larhouseBox;
-  G4LogicalVolume * larhouseLog;
-  G4VPhysicalVolume * larhousePhy;
 
   /**
    * MATERIALS
    */
   G4Material * fAir;
-  G4Material * fLAr;
-  G4Material * fAl;
-
-  /**
-   * MATERIAL PROPERTY TABLE
-   */
-  G4MaterialPropertiesTable* fLAr_mt;
+  G4Material * fCO2;
 };
 
 
