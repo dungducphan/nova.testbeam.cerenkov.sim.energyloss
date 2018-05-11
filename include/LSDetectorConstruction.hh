@@ -53,8 +53,19 @@ private:
   G4double kapton_hz = 1.0 * mm;
   G4Box * kaptonBox;
   G4LogicalVolume * kaptonLog;
-  G4VPhysicalVolume * kaptonPhy_us, * kaptonPhy_ds, * kaptonPhy_mirror; // upstream + downstream
+  G4VPhysicalVolume * kaptonPhy_us, * kaptonPhy_ds; // upstream + downstream
   G4double usds_z = co2_hz/2 + kapton_hz/2;
+
+  /**
+   * Mylar mirror
+   */
+  G4double mirror_hx = 1.0 * m;
+  G4double mirror_hy = 1.0 * m;
+  G4double mirror_hz = 2.0 * mm;
+  G4Box * mirrorBox;
+  G4LogicalVolume * mirrorLog;
+  G4VPhysicalVolume * mirrorPhy; // upstream + downstream
+  G4double mirror_z = -usds_z + 20 * cm;
 
   /**
    * MATERIALS
@@ -62,6 +73,7 @@ private:
   G4Material * fAir;
   G4Material * fCO2;
   G4Material * fKapton;
+  G4Material * fMylar;
 };
 
 
