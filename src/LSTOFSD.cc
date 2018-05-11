@@ -36,9 +36,10 @@ G4bool LSTOFSD::ProcessHits(G4Step* aStep, G4TouchableHistory*) {
   if(theTrack->GetParentID() != 0) return false;
 
   G4StepPoint* thePostPoint = aStep->GetPostStepPoint();
+  G4StepPoint* thePrePoint = aStep->GetPreStepPoint();
   G4TouchableHistory* theTouchable = (G4TouchableHistory*)(thePostPoint->GetTouchable());
   G4double energy = theTrack -> GetTotalEnergy();
-  std::cout << "Electron energy = " << energy/MeV << " MeV." << std::endl;
+  std::cout << "," << energy/MeV;
 
   // Creating the hit and add it to the collection
   fTOFHitCollection->insert(new LSTOFHit(energy));
