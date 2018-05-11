@@ -22,6 +22,7 @@ public:
   LSDetectorConstruction();
   virtual ~LSDetectorConstruction();
   virtual G4VPhysicalVolume* Construct();
+  virtual void ConstructSDandField();
   virtual void BuildMaterial();
 
 private:

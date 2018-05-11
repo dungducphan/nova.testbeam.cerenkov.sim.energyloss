@@ -1,4 +1,7 @@
 #include "LSDetectorConstruction.hh"
+#include "LSTOFSD.hh"
+
+#include "G4SDManager.hh"
 
 LSDetectorConstruction::LSDetectorConstruction() : G4VUserDetectorConstruction() {
 }
@@ -74,4 +77,14 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
   worldPhy = new G4PVPlacement(0, G4ThreeVector(), worldLog, "WorldPhy", 0, false, 0, checkOverlaps);
 
   return worldPhy;
+}
+
+void LSDetectorConstruction::ConstructSDandField() {
+  // Sensitive detectors
+
+  LSTOFSD* TOFSD_ds = new LSTOFSD("TOFSD_ds");
+  G4SDManager::GetSDMpointer()->AddNewDetector(TOFSD_ds);
+
+  // Setting aTrackerSD to all logical volumes with the same name of "Chamber_LV".
+  SetSensitiveDetector("tofLog", TOFSD_ds, true);
 }
