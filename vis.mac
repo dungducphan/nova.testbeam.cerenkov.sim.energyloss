@@ -39,7 +39,7 @@
 # Add trajectories to the current scene
 # Note: This command is not necessary since the C++ method DrawTrajectory()
 #       is called in LXeEventAction::EndOfEventAction
-#/vis/scene/add/trajectories
+/vis/scene/add/trajectories
 #
 # Requests viewer to accumulate hits, tracks, etc. at end of event. 
 # detector remains or is redrawn.

@@ -1,4 +1,7 @@
 #include "LSDetectorConstruction.hh"
+#include "LSTOFSD.hh"
+
+#include "G4SDManager.hh"
 
 LSDetectorConstruction::LSDetectorConstruction() : G4VUserDetectorConstruction() {
 }
@@ -15,6 +18,12 @@ void LSDetectorConstruction::BuildMaterial() {
   // CO2
   fCO2 = nist->FindOrBuildMaterial("G4_CARBON_DIOXIDE");
 
+  // Kapton
+  fKapton = nist->FindOrBuildMaterial("G4_KAPTON");
+
+  // Mylar
+  fMylar = nist->FindOrBuildMaterial("G4_MYLAR");
+
   return;
 }
 
@@ -24,7 +33,23 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
   // Overlapping check
   G4bool checkOverlaps = true;
 
+  /**
+   * [Kapton]
+   */
+  kaptonBox = new G4Box("kaptonBox", kapton_hx/2., kapton_hy/2., kapton_hz/2.);
+  kaptonLog = new G4LogicalVolume(kaptonBox, fKapton,"kaptonLog", 0, 0, 0);
 
+  /**
+   * [Fake TOF]
+   */
+  tofBox = new G4Box("tofBox", tof_hx/2., tof_hy/2., tof_hz/2.);
+  tofLog = new G4LogicalVolume(tofBox, fAir,"tofLog", 0, 0, 0);
+
+  /**
+   * [Mirror]
+   */
+  mirrorBox = new G4Box("mirrorBox", mirror_hx/2., mirror_hy/2., mirror_hz/2.);
+  mirrorLog = new G4LogicalVolume(mirrorBox, fMylar,"mirrorLog", 0, 0, 0);
 
   /**
    * [CO2 Volume description]
@@ -43,8 +68,20 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
    * Placing volumes in WORLD
    * Remember to define all the needed logical volumes before arranging place hierarchy!
    */
-  co2Phy = new G4PVPlacement(0, G4ThreeVector(), co2Log, "LArVolumePhy", worldLog, false, 0);
+  co2Phy = new G4PVPlacement(0, G4ThreeVector(), co2Log, "CO2Phy", worldLog, false, 0);
+  kaptonPhy_us = new G4PVPlacement(0, G4ThreeVector(0, 0, +usds_z), kaptonLog, "kaptonPhy_us", worldLog, false, 0);
+  kaptonPhy_ds = new G4PVPlacement(0, G4ThreeVector(0, 0, -usds_z), kaptonLog, "kaptonPhy_ds", worldLog, false, 0);
+  mirrorPhy = new G4PVPlacement(0, G4ThreeVector(0, 0, mirror_z), mirrorLog, "mirrorPy", co2Log, false, 0);
+  tofPhy_us = new G4PVPlacement(0, G4ThreeVector(0, 0, +tof_z), tofLog, "tofPhy_us", worldLog, false, 0);
+  tofPhy_ds = new G4PVPlacement(0, G4ThreeVector(0, 0, -tof_z), tofLog, "tofPhy_ds", worldLog, false, 0);
   worldPhy = new G4PVPlacement(0, G4ThreeVector(), worldLog, "WorldPhy", 0, false, 0, checkOverlaps);
 
   return worldPhy;
+}
+
+void LSDetectorConstruction::ConstructSDandField() {
+  LSTOFSD* TOFSD_ds = new LSTOFSD("TOFSD_ds");
+  G4SDManager::GetSDMpointer()->AddNewDetector(TOFSD_ds);
+
+  SetSensitiveDetector("tofLog", TOFSD_ds, true);
 }
