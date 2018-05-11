@@ -40,7 +40,7 @@ private:
    */
   G4double co2_hx = 2.0 * m;
   G4double co2_hy = 2.0 * m;
-  G4double co2_hz = 2.0 * m;
+  G4double co2_hz = 2.5 * m;
   G4Box * co2Box;
   G4LogicalVolume * co2Log;
   G4VPhysicalVolume * co2Phy;
@@ -50,7 +50,7 @@ private:
    */
   G4double kapton_hx = 1.0 * m;
   G4double kapton_hy = 1.0 * m;
-  G4double kapton_hz = 2.0 * mm;
+  G4double kapton_hz = 1.0 * mm;
   G4Box * kaptonBox;
   G4LogicalVolume * kaptonLog;
   G4VPhysicalVolume * kaptonPhy_us, * kaptonPhy_ds, * kaptonPhy_mirror; // upstream + downstream
