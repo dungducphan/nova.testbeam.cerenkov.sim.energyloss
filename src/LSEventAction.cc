@@ -12,7 +12,7 @@ void LSEventAction::BeginOfEventAction(const G4Event * event) {
 
 void LSEventAction::EndOfEventAction(const G4Event * event) {
   fRunAction->FillEventCountHist();
-  
+
   G4SDManager* SDManager= G4SDManager::GetSDMpointer();
   LSTOFSD* tofSD= (LSTOFSD*)SDManager-> FindSensitiveDetector("TOFSD");
   LSTOFHitsCollection* tofHC = tofSD->GetHitCollection();

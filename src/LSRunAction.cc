@@ -22,7 +22,6 @@ void LSRunAction::EndOfRunAction(const G4Run * run) {
 
 void LSRunAction::FillAnalysisTree(double energyLoss) {
   EnergyLoss = energyLoss;
-  std::cout << EnergyLoss << std::endl;
   fAnalysisTree->Fill();
 }
 
