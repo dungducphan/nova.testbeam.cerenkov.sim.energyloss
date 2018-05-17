@@ -15,5 +15,4 @@ void LSActionInitialization::Build() const {
   LSEventAction* eventAction = new LSEventAction(runAction);
   SetUserAction(eventAction);
 
-  //SetUserAction(new LSSteppingAction(eventAction));
 }

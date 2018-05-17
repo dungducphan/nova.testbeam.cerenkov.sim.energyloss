@@ -8,7 +8,13 @@
 #include "G4UserEventAction.hh"
 #include "globals.hh"
 
+#include "G4SDManager.hh"
+#include "LSTOFSD.hh"
+#include "LSTOFHit.hh"
+#include "G4SystemOfUnits.hh"
+
 class LSRunAction;
+class LSTOFHit;
 
 class LSEventAction : public G4UserEventAction {
 public:

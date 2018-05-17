@@ -12,7 +12,7 @@
 class LSTOFHit : public G4VHit {
 public:
   LSTOFHit();
-  LSTOFHit(G4double pEnergy);
+  LSTOFHit(G4int pTOFID, G4double pEnergy);
   virtual ~LSTOFHit();
 
   LSTOFHit(const LSTOFHit &right);
@@ -24,11 +24,14 @@ public:
   inline void  operator delete(void*);
 
   inline void SetEnergy(G4double e) { fEnergy = e; }
+  inline void SetTOFID(G4int tofid) { fTOFID = tofid; }
 
   inline G4double GetEnergy() { return fEnergy; }
+  inline G4int    GetTOFID() { return fTOFID; }
 
 private:
   G4double      fEnergy;
+  G4int         fTOFID;
 };
 
 //--------------------------------------------------

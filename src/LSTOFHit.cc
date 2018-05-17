@@ -11,7 +11,8 @@ G4ThreadLocal G4Allocator<LSTOFHit>* LSTOFHitAllocator=0;
 LSTOFHit::LSTOFHit() {
 }
 
-LSTOFHit::LSTOFHit(G4double pEnergy) {
+LSTOFHit::LSTOFHit(G4int pTOFID, G4double pEnergy) {
+  fTOFID       = pTOFID;
   fEnergy      = pEnergy;
 }
 
@@ -24,12 +25,12 @@ LSTOFHit::LSTOFHit(const LSTOFHit& right) : G4VHit() {
 
 const LSTOFHit& LSTOFHit::operator=(const LSTOFHit& right) {
   fEnergy      = right.fEnergy;
+  fTOFID      = right.fTOFID;
 
   return *this;
 }
 
 G4int LSTOFHit::operator==(const LSTOFHit& right) const {
-  return fEnergy == right.fEnergy;
+  return (fEnergy == right.fEnergy && fTOFID == right.fTOFID);
 }
-
 
