@@ -32,17 +32,22 @@ G4bool LSTOFSD::ProcessHits(G4Step* aStep, G4TouchableHistory*) {
   if (aStep == NULL) return false;
   G4Track* theTrack = aStep->GetTrack();
 
-  // Need to know if this is an optical photon
+  // Need to know if this is the primary particle
   if(theTrack->GetParentID() != 0) return false;
 
-  G4StepPoint* thePostPoint = aStep->GetPostStepPoint();
   G4StepPoint* thePrePoint = aStep->GetPreStepPoint();
-  G4TouchableHistory* theTouchable = (G4TouchableHistory*)(thePostPoint->GetTouchable());
+
+  G4int tofid = 0;
+  if (thePrePoint->GetPhysicalVolume()->GetName() == "tofPhy_us") {
+    tofid = 1;
+  } else if (thePrePoint->GetPhysicalVolume()->GetName() == "tofPhy_ds") {
+    tofid = 2;
+  }
+
   G4double energy = theTrack -> GetTotalEnergy();
-  std::cout << "," << energy/MeV;
 
   // Creating the hit and add it to the collection
-  fTOFHitCollection->insert(new LSTOFHit(energy));
+  fTOFHitCollection->insert(new LSTOFHit(tofid, energy));
 
   return true;
 }

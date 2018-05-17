@@ -80,7 +80,7 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
 }
 
 void LSDetectorConstruction::ConstructSDandField() {
-  LSTOFSD* TOFSD_ds = new LSTOFSD("TOFSD_ds");
+  LSTOFSD* TOFSD_ds = new LSTOFSD("TOFSD");
   G4SDManager::GetSDMpointer()->AddNewDetector(TOFSD_ds);
 
   SetSensitiveDetector("tofLog", TOFSD_ds, true);

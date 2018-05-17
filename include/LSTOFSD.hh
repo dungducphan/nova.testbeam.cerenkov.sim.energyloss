@@ -20,6 +20,8 @@ public:
   virtual void   Initialize(G4HCofThisEvent*);
   virtual G4bool ProcessHits(G4Step*, G4TouchableHistory*);
 
+  virtual LSTOFHitsCollection* GetHitCollection() { return fTOFHitCollection; }
+
 private:
   LSTOFHitsCollection* fTOFHitCollection;
 };

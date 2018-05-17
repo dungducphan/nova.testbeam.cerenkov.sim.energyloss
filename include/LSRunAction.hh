@@ -6,6 +6,10 @@
 #include "G4Run.hh"
 #include "globals.hh"
 
+#include "TFile.h"
+#include "TTree.h"
+#include "TH1I.h"
+
 class G4Run;
 
 class LSRunAction : public G4UserRunAction {
@@ -15,6 +19,14 @@ public:
 
   virtual void BeginOfRunAction(const G4Run*);
   virtual void EndOfRunAction(const G4Run*);
+
+  TFile* fOutput;
+  TTree* fAnalysisTree;
+  double EnergyLoss;
+  TH1I*  hEventInRunCount;
+
+  virtual void FillAnalysisTree(double energyLoss);
+  virtual void FillEventCountHist();
 
 };
 
