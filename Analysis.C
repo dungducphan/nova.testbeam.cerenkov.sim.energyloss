@@ -23,7 +23,7 @@ TBranch   *b_EnergyLoss;
 std::string particleName;
 
 void Analysis(std::string, unsigned int);
-void CountSignalSurvive();
+void CountSignalSurvive(unsigned int);
 void EstimateEnergyLoss();
 
 void Analysis(std::string pName, unsigned int NumberOfEvents) {
@@ -33,15 +33,13 @@ void Analysis(std::string pName, unsigned int NumberOfEvents) {
   analysisTree->SetBranchAddress("Energy", &Energy, &b_Energy);
   analysisTree->SetBranchAddress("EnergyLoss", &EnergyLoss, &b_EnergyLoss);
 
-  CountSignalSurvive();
+  CountSignalSurvive(NumberOfEvents);
   EstimateEnergyLoss();
 
   rootfile->Close();
-  delete(rootfile);
-  delete(analysisTree);
 }
 
-void CountSignalSurvive() {
+void CountSignalSurvive(unsigned int NumberOfEvents) {
   GeneralStyle();
 
   unsigned int N = analysisTree->GetEntries();
@@ -54,8 +52,8 @@ void CountSignalSurvive() {
 
   for (unsigned int i = 0; i < energy->GetSize(); i++) {
     energy->SetBinError(i, 1/TMath::Sqrt((double)energy->GetBinContent(i)));
+    energy->SetBinContent(i, 100*(double)energy->GetBinContent(i)/(double)NumberOfEvents);
   }
-  energy->Scale(100/NumberOfEvent);
 
   TCanvas* c = new TCanvas();
   StyleLogLinear(c);
@@ -80,6 +78,7 @@ void CountSignalSurvive() {
   energy->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
+  delete(histogramFile);
 }
 
 void EstimateEnergyLoss() {
@@ -87,7 +86,7 @@ void EstimateEnergyLoss() {
 
   unsigned int N = analysisTree->GetEntries();
   std::vector<double> E     = LogBins(60, 1.E1, 1.E4);
-  std::vector<double> Eloss = LogBins(60, 1E0, 1E3);
+  std::vector<double> Eloss = LogBins(80, 1E0, 1E4);
   TH2D *hEloss = new TH2D(Form("eloss_%s", particleName.c_str()), Form("%s;Energy (MeV);Energy loss (MeV)", particleName.c_str()), E.size() - 1, &E[0], Eloss.size() - 1, &Eloss[0]);
   for (unsigned int i = 0; i < N; i++) {
     analysisTree->GetEntry(i);
@@ -95,6 +94,7 @@ void EstimateEnergyLoss() {
   }
   TCanvas* c = new TCanvas();
   StyleLogLog(c);
+  c->SetLogz();
 
   hEloss->GetXaxis()->CenterTitle();
   hEloss->GetYaxis()->CenterTitle();
@@ -109,4 +109,5 @@ void EstimateEnergyLoss() {
   hEloss->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
+  delete(histogramFile);
 }
