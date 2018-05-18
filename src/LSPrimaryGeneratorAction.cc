@@ -9,15 +9,10 @@ LSPrimaryGeneratorAction::LSPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAc
 
   fParticleGun = new G4ParticleGun(n_particle);
   G4ParticleTable * particleTable = G4ParticleTable::GetParticleTable();
-  G4String particleName;
-  G4ParticleDefinition * particle = particleTable->FindParticle(particleName = "e-");
-  fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., -1.));
-//  fParticleGun->SetParticleEnergy(500*MeV);
   fParticleGun->SetParticlePosition(G4ThreeVector(0, 0, 2.5*m));
 
   fRND.SetSeed(time(0));
-  IsEnergySet = false;
 }
 
 LSPrimaryGeneratorAction::~LSPrimaryGeneratorAction() {
@@ -25,15 +20,13 @@ LSPrimaryGeneratorAction::~LSPrimaryGeneratorAction() {
 }
 
 void LSPrimaryGeneratorAction::GeneratePrimaries(G4Event * anEvent) {
-  if (!IsEnergySet) {
+  if (fParticleGun->GetParticleEnergy() != fGunEnergyCenterValue) {
     fGunEnergyCenterValue = fParticleGun->GetParticleEnergy();
-    GunRandomEnergy(fELowerEdge, fEUpperEdge);
-    IsEnergySet = true;
+    fEnergyBin = GunRandomEnergy(fELowerEdge, fEUpperEdge);
   }
   G4double GunEnergyInThisEvent = fRND.Uniform(fELowerEdge, fEUpperEdge)*MeV;
-  std::cout << fELowerEdge << " : " << GunEnergyInThisEvent << " : " << fEUpperEdge << std::endl;
-  fParticleGun->SetParticleEnergy(GunEnergyInThisEvent);
 
+  fParticleGun->SetParticleEnergy(GunEnergyInThisEvent);
   fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 
@@ -47,12 +40,16 @@ std::vector<double> LSPrimaryGeneratorAction::LogBins(int nbins, double xlo, dou
   return binning;
 }
 
-void LSPrimaryGeneratorAction::GunRandomEnergy(double& lowEgde, double& upEdge) {
+int LSPrimaryGeneratorAction::GunRandomEnergy(double& lowEgde, double& upEdge) {
   auto hX = hSurf->ProjectionX();
   auto binX = hX->FindBin(fGunEnergyCenterValue/MeV);
 
   lowEgde = hX->GetBinLowEdge(binX);
   upEdge  = hX->GetBinLowEdge(binX + 1);
+
+  delete hX;
+
+  return binX;
 }
 
 

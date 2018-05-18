@@ -37,7 +37,8 @@ void LSEventAction::EndOfEventAction(const G4Event * event) {
     }
 
     if (hitTOFDS && hitTOFUS) {
-      fRunAction->FillAnalysisTree((energyAtTOF_US - energyAtTOF_DS)/MeV);
+      std::cout << energyAtTOF_US/MeV << " : " << energyAtTOF_DS << std::endl;
+      fRunAction->FillAnalysisTree(energyAtTOF_US/MeV, (energyAtTOF_US - energyAtTOF_DS)/MeV);
     }
   }
 

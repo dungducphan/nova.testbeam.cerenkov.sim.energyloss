@@ -30,7 +30,8 @@ public:
   // method from the base class
   virtual void GeneratePrimaries(G4Event*);
   virtual std::vector<double> LogBins(int, double, double);
-  virtual void GunRandomEnergy(double&, double&);
+  virtual int GunRandomEnergy(double&, double&);
+  virtual int GetEnergyBin() { return fEnergyBin; }
 
   // method to access particle gun
   const G4ParticleGun* GetParticleGun() const { return fParticleGun; }
@@ -40,7 +41,7 @@ private:
   G4double fGunEnergyCenterValue;
   G4double fELowerEdge, fEUpperEdge;
   TH2D* hSurf;
-  bool IsEnergySet;
+  int fEnergyBin;
 
   TRandom3 fRND;
 };
