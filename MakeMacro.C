@@ -2,7 +2,7 @@
 #include <cstring>
 #include <fstream>
 
-unsigned int NumberOfEvent = 100;
+unsigned int NumberOfEvent = 10000;
 
 void MakeMacro();
 std::vector<double> LogBins(int, double, double);
@@ -73,11 +73,10 @@ void MakeMacro() {
   {
     std::ofstream out(Form("clean.sh"));
     out << Form("#!/bin/bash") << std::endl;
-    out << Form("rm Macros/run_*.mac") << std::endl;
-    out << Form("rm Output/*.root") << std::endl;
+    out << Form("rm Macros/*") << std::endl;
+    out << Form("rm Output/*") << std::endl;
     out << Form("rm join.sh") << std::endl;
-    out << Form("rm Results/*.root") << std::endl;
-    out << Form("rm Results/*.pdf") << std::endl;
+    out << Form("rm Results/*") << std::endl;
     out.close();
   }
 
