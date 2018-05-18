@@ -55,7 +55,7 @@ private:
   G4Box * tofBox;
   G4LogicalVolume * tofLog;
   G4VPhysicalVolume * tofPhy_us, * tofPhy_ds;
-  G4double tof_z = world_hz/2 - tof_hz/2;
+  G4double tof_z = world_hz/2 - 2*tof_hz/2;
 
   /**
    * Kapton VOLUME

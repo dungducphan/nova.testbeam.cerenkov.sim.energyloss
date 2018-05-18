@@ -13,6 +13,10 @@
 #include "G4SystemOfUnits.hh"
 #include "Randomize.hh"
 #include "globals.hh"
+#include "TH2.h"
+#include "TH1.h"
+#include "TRandom3.h"
+#include <cstdlib>
 
 class G4ParticleGun;
 class G4Event;
@@ -25,12 +29,22 @@ public:
 
   // method from the base class
   virtual void GeneratePrimaries(G4Event*);
+  virtual std::vector<double> LogBins(int, double, double);
+  virtual std::vector<double> LinearBins(int, double, double);
+  virtual int GunRandomEnergy(double&, double&);
+  virtual int GetEnergyBin() { return fEnergyBin; }
 
   // method to access particle gun
   const G4ParticleGun* GetParticleGun() const { return fParticleGun; }
 
 private:
   G4ParticleGun*  fParticleGun; // pointer a to G4 gun class
+  G4double fGunEnergyCenterValue;
+  G4double fELowerEdge, fEUpperEdge;
+  TH2D* hSurf;
+  int fEnergyBin;
+
+  TRandom3 fRND;
 };
 
 #endif

@@ -15,11 +15,14 @@ else()
   find_package(Geant4 REQUIRED)
 endif()
 
+find_package(ROOT REQUIRED)
+
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
 #
 include(${Geant4_USE_FILE})
+include(${ROOT_USE_FILE})
 
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
@@ -34,7 +37,7 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(LSsim LSsim.cc ${sources} ${headers})
-target_link_libraries(LSsim ${Geant4_LIBRARIES})
+target_link_libraries(LSsim ${Geant4_LIBRARIES} ${ROOT_LIBRARIES} Core Tree)
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
@@ -44,6 +47,9 @@ target_link_libraries(LSsim ${Geant4_LIBRARIES})
 set(LSsim_SCRIPTS
   vis.mac
   gui.mac
+  MakeMacro.C
+  Analysis.C
+  Style.C
   )
 
 foreach(_script ${LSsim_SCRIPTS})
@@ -53,6 +59,10 @@ foreach(_script ${LSsim_SCRIPTS})
     COPYONLY
     )
 endforeach()
+
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Output)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Macros)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Results)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
