@@ -78,7 +78,7 @@ void CountSignalSurvive(unsigned int NumberOfEvents) {
   energy->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
-  delete(histogramFile);
+	delete(histogramFile);
 }
 
 void EstimateEnergyLoss() {
@@ -109,5 +109,5 @@ void EstimateEnergyLoss() {
   hEloss->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
-  delete(histogramFile);
+	delete(histogramFile);
 }
