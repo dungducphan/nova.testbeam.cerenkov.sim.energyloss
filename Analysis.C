@@ -37,8 +37,6 @@ void Analysis(std::string pName, unsigned int NumberOfEvents) {
   EstimateEnergyLoss();
 
   rootfile->Close();
-  delete(rootfile);
-  delete(analysisTree);
 }
 
 void CountSignalSurvive() {
@@ -80,6 +78,7 @@ void CountSignalSurvive() {
   energy->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
+	delete(histogramFile);
 }
 
 void EstimateEnergyLoss() {
@@ -109,4 +108,5 @@ void EstimateEnergyLoss() {
   hEloss->Write(0, TObject::kOverwrite);
   histogramFile->Write(0, TObject::kOverwrite);
   histogramFile->Close();
+	delete(histogramFile);
 }
