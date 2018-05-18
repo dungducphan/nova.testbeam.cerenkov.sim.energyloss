@@ -1,7 +1,0 @@
-/gun/particle mu-
-/run/initialize
-/gun/energy 200 MeV
-/run/beamOn 1000
-/run/initialize
-/gun/energy 3000 MeV
-/run/beamOn 1000

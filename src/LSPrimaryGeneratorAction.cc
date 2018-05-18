@@ -2,7 +2,7 @@
 
 LSPrimaryGeneratorAction::LSPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAction(), fParticleGun(0) {
   std::vector<double> E = LogBins(30, 1.E1, 1.E4);
-  std::vector<double> Eloss  = LogBins(30, 1.E-2, 1.E1);
+  std::vector<double> Eloss  = LogBins(30, 0, 30);
   hSurf = new TH2D("ELossVsE", "ElossVsE;Eloss[MeV];E[MeV]", E.size()-1, &E[0], Eloss.size()-1, &Eloss[0]);
 
   G4int n_particle = 1;
@@ -40,6 +40,16 @@ std::vector<double> LSPrimaryGeneratorAction::LogBins(int nbins, double xlo, dou
   return binning;
 }
 
+std::vector<double> LSPrimaryGeneratorAction::LinearBins(int nbins, double xlo, double xhi) {
+  double linear_spacing = (xhi - xlo)/ (double) nbins;
+  std::vector<double> binning;
+  for (int i = 0; i <= nbins; ++i) {
+    if (i == 0) binning.push_back(xlo);
+    else        binning.push_back(linear_spacing + binning[i-1]);
+  }
+  return binning;
+}
+
 int LSPrimaryGeneratorAction::GunRandomEnergy(double& lowEgde, double& upEdge) {
   auto hX = hSurf->ProjectionX();
   auto binX = hX->FindBin(fGunEnergyCenterValue/MeV);
@@ -51,5 +61,7 @@ int LSPrimaryGeneratorAction::GunRandomEnergy(double& lowEgde, double& upEdge) {
 
   return binX;
 }
+
+
 
 

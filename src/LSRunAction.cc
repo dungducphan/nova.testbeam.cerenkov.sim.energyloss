@@ -1,4 +1,5 @@
 #include "LSRunAction.hh"
+#include <cstring>
 #include "G4SystemOfUnits.hh"
 
 LSRunAction::LSRunAction() : G4UserRunAction() {
@@ -11,8 +12,9 @@ void LSRunAction::BeginOfRunAction(const G4Run * run) {
   G4RunManager* runManager = static_cast<G4RunManager*>(G4RunManager::GetRunManager());
   LSPrimaryGeneratorAction* pga = (LSPrimaryGeneratorAction*) runManager->GetUserPrimaryGeneratorAction();
   int energyBin = pga->GetEnergyBin();
+  std::string particleName = pga->GetParticleGun()->GetParticleDefinition()->GetParticleName();
 
-  fOutput = new TFile(Form("EnergyLoss_%i.root", energyBin), "RECREATE");
+  fOutput = new TFile(Form("Output/EnergyLoss_%s_%i.root", particleName.c_str(), energyBin), "RECREATE");
   fAnalysisTree = new TTree("AnalysisTree","Energy loss analysis");
   fAnalysisTree->Branch("Energy", &Energy, "Energy/D");
   fAnalysisTree->Branch("EnergyLoss", &EnergyLoss, "EnergyLoss/D");

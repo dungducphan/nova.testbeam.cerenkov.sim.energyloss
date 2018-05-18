@@ -47,7 +47,9 @@ target_link_libraries(LSsim ${Geant4_LIBRARIES} ${ROOT_LIBRARIES} Core Tree)
 set(LSsim_SCRIPTS
   vis.mac
   gui.mac
-  run.mac
+  MakeMacro.C
+  Analysis.C
+  Style.C
   )
 
 foreach(_script ${LSsim_SCRIPTS})
@@ -57,6 +59,10 @@ foreach(_script ${LSsim_SCRIPTS})
     COPYONLY
     )
 endforeach()
+
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Output)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Macros)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Results)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX

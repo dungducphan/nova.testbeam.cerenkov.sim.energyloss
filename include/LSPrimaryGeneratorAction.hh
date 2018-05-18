@@ -30,6 +30,7 @@ public:
   // method from the base class
   virtual void GeneratePrimaries(G4Event*);
   virtual std::vector<double> LogBins(int, double, double);
+  virtual std::vector<double> LinearBins(int, double, double);
   virtual int GunRandomEnergy(double&, double&);
   virtual int GetEnergyBin() { return fEnergyBin; }
 
