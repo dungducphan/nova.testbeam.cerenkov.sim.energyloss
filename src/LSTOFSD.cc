@@ -44,7 +44,7 @@ G4bool LSTOFSD::ProcessHits(G4Step* aStep, G4TouchableHistory*) {
     tofid = 2;
   }
 
-  G4double energy = theTrack -> GetTotalEnergy();
+  G4double energy = theTrack -> GetKineticEnergy();
 
   // Creating the hit and add it to the collection
   fTOFHitCollection->insert(new LSTOFHit(tofid, energy));

@@ -8,20 +8,27 @@ LSRunAction::~LSRunAction() {
 }
 
 void LSRunAction::BeginOfRunAction(const G4Run * run) {
-  fOutput = new TFile(Form("EnergyLoss_%i.root", run->GetRunID()), "RECREATE");
+  G4RunManager* runManager = static_cast<G4RunManager*>(G4RunManager::GetRunManager());
+  LSPrimaryGeneratorAction* pga = (LSPrimaryGeneratorAction*) runManager->GetUserPrimaryGeneratorAction();
+  int energyBin = pga->GetEnergyBin();
+
+  fOutput = new TFile(Form("EnergyLoss_%i.root", energyBin), "RECREATE");
   fAnalysisTree = new TTree("AnalysisTree","Energy loss analysis");
+  fAnalysisTree->Branch("Energy", &Energy, "Energy/D");
   fAnalysisTree->Branch("EnergyLoss", &EnergyLoss, "EnergyLoss/D");
   hEventInRunCount = new TH1I("hEventInRunCount", "hEventInRunCount", 2, 0, 2);
 }
 
 void LSRunAction::EndOfRunAction(const G4Run * run) {
-  fAnalysisTree->Write();
-  hEventInRunCount->Write();
-  fOutput->Write();
+  fAnalysisTree->Write(0, TObject::kOverwrite);
+  hEventInRunCount->Write(0, TObject::kOverwrite);
+  fOutput->Write(0, TObject::kOverwrite);
+  fOutput->Close();
 }
 
-void LSRunAction::FillAnalysisTree(double energyLoss) {
+void LSRunAction::FillAnalysisTree(double energy, double energyLoss) {
   EnergyLoss = energyLoss;
+  Energy = energy;
   fAnalysisTree->Fill();
 }
 
