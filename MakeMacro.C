@@ -2,6 +2,8 @@
 #include <cstring>
 #include <fstream>
 
+#include "TH2.h"
+
 unsigned int NumberOfEvent = 10000;
 
 void MakeMacro();
