@@ -19,6 +19,9 @@ We made a simulation to understand the effect of the detector’s materials on t
 - A mylar mirror, 2 mm in thickness, density of 1.4 g/cm2.
 - World volume made of air, 5-m long in the beam direction.
 
+Detector components
+![alt text](https://drive.google.com/drive/u/0/folders/1NGkUYc5ZuamEriWOCMsWpb7fFj4ASoUT)
+
 ### Physics
 - Particle Transport.
 - Energy loss.
@@ -75,10 +78,50 @@ First, we need to make the macro files.
     ParticleList.push_back("kaon0");
     ParticleList.push_back("kaon-");
 ```
-
-
-
-- Run the script `MakeMacro.C`
+- Energy bins for the production run is define in lines [45-46]
+```c_cpp
+    std::vector<double> E     = LogBins(60, 1.E1, 1.E4);
+    std::vector<double> Eloss = LogBins(60, 1.E1, 1.E3);
+```
+- Run the script `MakeMacro.C` to make the macro files. The macros will be in `Macros` folder.
 ```sh
 root -l -bq MakeMacro.C
 ```
+
+Once, we ran the `MakeMacro.C`, not only the macros are created, the bashcript `run.sh` is also made available.
+- Run this script to start the run
+```sh
+bash ./run.sh
+```
+- It would take quite a while for the production run to finish. Take your time.
+- After the run finished, the `.root` files will be saved in `Output` folder and ready for analysis.
+- **If you ever need to clean up everything** to start a run production or new analysis batch, run the `clean.sh` script.
+```sh
+bash ./clean.sh
+```
+
+### Analysis
+- First step in doing analysis is joining the `.root` files that corresponds to the same particle type.
+```sh
+bash ./join.sh
+```
+- All the joined `.root` will be saved in the `Results` folder.
+- Now, it comes to you to write your analysis scripts to analyze the data. We did provided `Analysis.C` to perform 2 simple analyses:
+    + Energy loss as a function of energy for each type of particle.
+    + Fraction of signal for each type of particle.
+- Run the script with 2 arguments, the first is a string for particle name (following `Geant4` name convention), and the second is the total number of particles in a single run (see `NumberOfEvents` variable in `MakeMacros.C` to find this number).
+```sh
+root -l -bq 'Analysis.C("e-", 10000)'
+```
+- The analysis plots will be saved in `Results` folder.
+
+### Some money plots
+
+An event display for a run of 100 electrons at 100 MeV.
+https://drive.google.com/file/d/17cVudTp0hdLticphlnutfVlmT7yLaeCi/view?usp=sharing
+Energy loss of electrons
+![alt text](http://url/to/img.png)
+Energy loss of muons
+![alt text](http://url/to/img.png)
+Fraction of signal for electrons
+Fraction of signal for muons
