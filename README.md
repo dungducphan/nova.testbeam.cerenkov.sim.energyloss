@@ -43,12 +43,12 @@ We made a simulation to understand the effect of the detector’s materials on t
 
 ### Building
 - Cloning the repo. Using the tag `v1.1`.
-```bash
+```sh
     git clone https://github.com/dungducphan/nova.testbeam.cerenkov.sim.energyloss.git
     git checkout tags/v1.1
 ```
 - Build. We assume the convention of having `build` directory as the same level as `source` directory.
-```bash
+```sh
     mkdir build
     cd build
     cmake ../nova.testbeam.cerenkov.sim.energyloss
@@ -59,11 +59,11 @@ We made a simulation to understand the effect of the detector’s materials on t
 First, we need to make the macro files.
 - Open the script `MakeMacro.C` to review and/or change the production run configurations.
 - The number of events for each particle and an energy range is the global variable `NumberOfEvent` (line 7 with tag v1.1).
-```C
+```c_cpp
     unsigned int NumberOfEvent = 10000;
 ```
 - The particle list is defined in lines [34-43]. If you want to add more, please see the particle name convention for `Geant4` [here](http://fismed.ciemat.es/GAMOS/GAMOS_doc/GAMOS.5.0.0/x11174.html).
-```C
+```c_cpp
     std::vector<std::string> ParticleList;
     ParticleList.push_back("e-");
     ParticleList.push_back("mu-");
@@ -79,6 +79,6 @@ First, we need to make the macro files.
 
 
 - Run the script `MakeMacro.C`
-```bash
+```sh
 root -l -bq MakeMacro.C
 ```
