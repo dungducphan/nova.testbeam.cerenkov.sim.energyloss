@@ -20,7 +20,9 @@ We made a simulation to understand the effect of the detector’s materials on t
 - World volume made of air, 5-m long in the beam direction.
 
 Detector components
-![alt text](screenshots/eventDisplay_annotated.png)
+
+
+![alt text](screenshots/eventDisplay_annotated.png "Detector components in the simulation.")
 
 ### Physics
 - Particle Transport.
@@ -117,11 +119,31 @@ root -l -bq 'Analysis.C("e-", 10000)'
 
 ### Some money plots
 
-An event display for a run of 100 electrons at 100 MeV.
-https://drive.google.com/file/d/17cVudTp0hdLticphlnutfVlmT7yLaeCi/view?usp=sharing
+An event display for a run of 100 electrons at 250 MeV. Scattering made the electron beams spread out in the TOF_DS.
+
+
+![alt text](screenshots/eventDisplay_e.png "Event Display")
+
+
 Energy loss of electrons
-![alt text](http://url/to/img.png)
+
+
+![alt text](screenshots/eloss_e.png "Energy loss for electrons.")
+
+
 Energy loss of muons
-![alt text](http://url/to/img.png)
+
+
+![alt text](screenshots/eloss_mu.png "Energy loss for muons.")
+
+
 Fraction of signal for electrons
+
+
+![alt text](screenshots/signal_e.png "Signal fraction for electrons.")
+
+
 Fraction of signal for muons
+
+
+![alt text](screenshots/signal_mu.png "Signal fraction for muons.")
