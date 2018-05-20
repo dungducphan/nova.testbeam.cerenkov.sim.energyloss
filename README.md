@@ -20,7 +20,7 @@ We made a simulation to understand the effect of the detector’s materials on t
 - World volume made of air, 5-m long in the beam direction.
 
 Detector components
-![alt text](https://drive.google.com/drive/u/0/folders/1NGkUYc5ZuamEriWOCMsWpb7fFj4ASoUT)
+![alt text](screenshots/eventDisplay_annotated.png)
 
 ### Physics
 - Particle Transport.
