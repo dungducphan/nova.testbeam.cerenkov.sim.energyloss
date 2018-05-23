@@ -32,6 +32,7 @@ public:
   virtual std::vector<double> LogBins(int, double, double);
   virtual std::vector<double> LinearBins(int, double, double);
   virtual int GunRandomEnergy(double&, double&);
+  virtual void GunRandomPosition(double&, double&);
   virtual int GetEnergyBin() { return fEnergyBin; }
 
   // method to access particle gun
@@ -41,6 +42,9 @@ private:
   G4ParticleGun*  fParticleGun; // pointer a to G4 gun class
   G4double fGunEnergyCenterValue;
   G4double fELowerEdge, fEUpperEdge;
+  G4double fXStart, fYStart;
+  G4double fRmean;
+  G4double fRsigma;
   TH2D* hSurf;
   int fEnergyBin;
 
