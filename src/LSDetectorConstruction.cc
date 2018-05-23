@@ -24,6 +24,13 @@ void LSDetectorConstruction::BuildMaterial() {
   // Mylar
   fMylar = nist->FindOrBuildMaterial("G4_MYLAR");
 
+  // Vacuum
+  G4double density= 2.376e-15*g/cm3;
+  G4double temperature= 300*kelvin;
+  G4double pressure= 2.0e-7*bar;
+  fVacuum = new G4Material("Vacuum", density, 1, kStateGas,temperature,pressure);
+  fVacuum->AddMaterial(fAir, 1.);
+
   return;
 }
 
@@ -43,7 +50,7 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
    * [Fake TOF]
    */
   tofBox = new G4Box("tofBox", tof_hx/2., tof_hy/2., tof_hz/2.);
-  tofLog = new G4LogicalVolume(tofBox, fAir,"tofLog", 0, 0, 0);
+  tofLog = new G4LogicalVolume(tofBox, fVacuum, "tofLog", 0, 0, 0);
 
   /**
    * [Mirror]

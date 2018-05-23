@@ -49,9 +49,9 @@ private:
   /**
    * Fake TOF VOLUME (Sensitive detectors)
    */
-  G4double tof_hx = 13 * cm;
-  G4double tof_hy = 13 * cm;
-  G4double tof_hz = 1 * mm;
+  G4double tof_hx = 2 * m;
+  G4double tof_hy = 2 * m;
+  G4double tof_hz = 10 * mm;
   G4Box * tofBox;
   G4LogicalVolume * tofLog;
   G4VPhysicalVolume * tofPhy_us, * tofPhy_ds;
@@ -86,6 +86,7 @@ private:
   G4Material * fCO2;
   G4Material * fKapton;
   G4Material * fMylar;
+  G4Material* fVacuum;
 };
 
 
