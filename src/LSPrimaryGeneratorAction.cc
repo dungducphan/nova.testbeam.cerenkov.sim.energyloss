@@ -13,7 +13,7 @@ LSPrimaryGeneratorAction::LSPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAc
 
     fRND.SetSeed(time(0));
     fRmean = 0 * m;
-    fRsigma = 5 * cm;
+    fRsigma = 7 * cm;
 }
 
 LSPrimaryGeneratorAction::~LSPrimaryGeneratorAction() {
@@ -27,15 +27,20 @@ void LSPrimaryGeneratorAction::GeneratePrimaries(G4Event *anEvent) {
         fEnergyBin = GunRandomEnergy(fELowerEdge, fEUpperEdge);
     }
     G4double GunEnergyInThisEvent = fRND.Uniform(fELowerEdge, fEUpperEdge) * MeV;
+    fParticleGun->SetParticleEnergy(GunEnergyInThisEvent);
 
     // Randomize Momentum Direction
-    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., -1.));
+    fPRmean = 0.02*MeV;
+    fPRsigma = fPRmean/2;
+    G4double PTX, PTY;
+    GunRandomTransverseMomentum(PTX, PTY);
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(PTX, PTY, -1.));
 
     // Randomize Start Position
+    G4double fXStart, fYStart;
     GunRandomPosition(fXStart, fYStart);
     fParticleGun->SetParticlePosition(G4ThreeVector(fXStart, fYStart, 2.5 * m));
 
-    fParticleGun->SetParticleEnergy(GunEnergyInThisEvent);
     fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 
@@ -77,6 +82,14 @@ void LSPrimaryGeneratorAction::GunRandomPosition(double &xStart, double &yStart)
 
     xStart = radius * TMath::Cos(phi);
     yStart = radius * TMath::Sin(phi);
+}
+
+void LSPrimaryGeneratorAction::GunRandomTransverseMomentum(double &ptx, double &pty) {
+    G4double pradius = fRND.Gaus(fPRmean / MeV, fPRsigma / MeV) * MeV;
+    G4double phi = fRND.Uniform(0, TMath::Pi() * 2);
+
+    ptx = pradius * TMath::Cos(phi);
+    pty = pradius * TMath::Sin(phi);
 }
 
 
