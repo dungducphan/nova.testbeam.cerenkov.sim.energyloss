@@ -14,7 +14,7 @@ void LSRunAction::BeginOfRunAction(const G4Run * run) {
   int energyBin = pga->GetEnergyBin();
   std::string particleName = pga->GetParticleGun()->GetParticleDefinition()->GetParticleName();
 
-  fOutput = new TFile(Form("Output/EnergyLoss_%s_%i.root", particleName.c_str(), energyBin), "RECREATE");
+  fOutput = new TFile(Form("Output_2/EnergyLoss_%s_%i.root", particleName.c_str(), energyBin), "RECREATE");
   fAnalysisTree = new TTree("AnalysisTree","Energy loss analysis");
   fAnalysisTree->Branch("Energy", &Energy, "Energy/D");
   fAnalysisTree->Branch("EnergyLoss", &EnergyLoss, "EnergyLoss/D");

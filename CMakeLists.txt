@@ -62,6 +62,7 @@ foreach(_script ${LSsim_SCRIPTS})
     )
 endforeach()
 
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Output_2)
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Output)
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Macros)
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/Results)
