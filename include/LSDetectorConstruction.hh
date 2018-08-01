@@ -31,7 +31,7 @@ private:
    */
   G4double world_hx = 5.0 * m;
   G4double world_hy = 5.0 * m;
-  G4double world_hz = 5.0 * m;
+  G4double world_hz = 10.0 * m;
   G4Box * worldBox;
   G4LogicalVolume * worldLog;
   G4VPhysicalVolume * worldPhy;
@@ -47,7 +47,7 @@ private:
   G4VPhysicalVolume * co2Phy;
 
   /**
-   * Fake TOF VOLUME (Sensitive detectors)
+   * Fake TOF VOLUME
    */
   G4double tof_hx = 2 * m;
   G4double tof_hy = 2 * m;
@@ -55,8 +55,22 @@ private:
   G4Box * tofBox;
   G4LogicalVolume * tofLog;
   G4VPhysicalVolume * tofPhy_us, * tofPhy_ds;
-  G4double tof_z = world_hz/2 - 2*tof_hz/2;
+  G4double tof_z = co2_hz/2 + 2*tof_hz/2+2*m;
 
+
+  /**
+   * Detector VOLUME (Sensitive detectors)
+   */
+  G4double det_hx = 2 * m;
+  G4double det_hy = 2 * m;
+  G4double det_hz = 0.79 * 2.54 *cm;
+  G4Box * detBox;
+  G4LogicalVolume * detLog;
+  G4VPhysicalVolume * detPhy_us, * detPhy_ds;
+  G4double det_z = world_hz/2 - 2*tof_hz/2;
+
+
+  
   /**
    * Kapton VOLUME
    */

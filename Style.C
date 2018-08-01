@@ -23,6 +23,7 @@ void StyleLine(TLine* line,
 void StyleLogLog(TCanvas*);
 void StyleLinearLog(TCanvas*);
 void StyleLogLinear(TCanvas*);
+void StyleLinearLinear(TCanvas*);
 
 // Styling TH1
 void StyleTH1(TH1* histo,
@@ -125,6 +126,14 @@ void StyleLogLog(TCanvas* c) {
   c->SetLogx();
   c->SetLogy();
 }
+
+
+void StyleLinearLinear(TCanvas* c) {
+  c->SetRightMargin(0.15);
+  c->SetLeftMargin(0.15);
+  c->SetBottomMargin(0.15);
+}
+
 
 void StyleLinearLog(TCanvas* c) {
   c->SetRightMargin(0.15);

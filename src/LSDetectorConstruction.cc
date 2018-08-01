@@ -75,6 +75,12 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
   tofLog = new G4LogicalVolume(tofBox, fPVT, "tofLog", 0, 0, 0);
 
   /**
+   * [Detector]
+   */
+  detBox = new G4Box("detBox", det_hx/2., det_hy/2., det_hz/2.);
+  detLog = new G4LogicalVolume(detBox, fAir, "detLog", 0, 0, 0);
+  
+  /**
    * [Mirror]
    */
   mirrorBox = new G4Box("mirrorBox", mirror_hx/2., mirror_hy/2., mirror_hz/2.);
@@ -103,14 +109,16 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
   mirrorPhy = new G4PVPlacement(0, G4ThreeVector(0, 0, mirror_z), mirrorLog, "mirrorPy", co2Log, false, 0);
   tofPhy_us = new G4PVPlacement(0, G4ThreeVector(0, 0, +tof_z), tofLog, "tofPhy_us", worldLog, false, 0);
   tofPhy_ds = new G4PVPlacement(0, G4ThreeVector(0, 0, -tof_z), tofLog, "tofPhy_ds", worldLog, false, 0);
+  detPhy_us = new G4PVPlacement(0, G4ThreeVector(0, 0, +det_z), detLog, "detPhy_us", worldLog, false, 0);
+  detPhy_ds = new G4PVPlacement(0, G4ThreeVector(0, 0, -det_z), detLog, "detPhy_ds", worldLog, false, 0);
   worldPhy = new G4PVPlacement(0, G4ThreeVector(), worldLog, "WorldPhy", 0, false, 0, checkOverlaps);
 
   return worldPhy;
 }
 
 void LSDetectorConstruction::ConstructSDandField() {
-  LSTOFSD* TOFSD_ds = new LSTOFSD("TOFSD");
-  G4SDManager::GetSDMpointer()->AddNewDetector(TOFSD_ds);
+  LSTOFSD* DETSD_ds = new LSTOFSD("DETSD");
+  G4SDManager::GetSDMpointer()->AddNewDetector(DETSD_ds);
 
-  SetSensitiveDetector("tofLog", TOFSD_ds, true);
+  SetSensitiveDetector("detLog", DETSD_ds, true);
 }

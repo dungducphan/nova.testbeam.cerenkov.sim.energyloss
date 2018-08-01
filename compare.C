@@ -92,10 +92,10 @@ void EnergyHistogram(){
   std::cout<< "N3 = " << N3 << std::endl;
   std::cout<< "N4 = " << N4 << std::endl;
   
-  TH1D* energy1 = new TH1D("h1", Form("Energy_%s",particleName.c_str()), 2000, 0, 20000);
-  TH1D* energy2 = new TH1D("h2", "kapton.co2.air", 2000, 0, 20000);
-  TH1D* energy3 = new TH1D("h3", "air_FullExperiment", 2000, 0, 20000);
-  TH1D* energy4 = new TH1D("h4", "He_FullExperiment", 2000, 0, 20000);
+  TH1D* energy1 = new TH1D("h1", Form("Energy_%s",particleName.c_str()), 2000, 0, 30);
+  TH1D* energy2 = new TH1D("h2", "kapton.co2.air", 30, 0, 30);
+  TH1D* energy3 = new TH1D("h3", "air_FullExperiment", 30, 0, 30);
+  TH1D* energy4 = new TH1D("h4", "He_FullExperiment", 30, 0, 30);
 
   for (unsigned int i = 0; i < N1; i++) {
     analysisTree1->GetEntry(i);
@@ -123,7 +123,7 @@ void EnergyHistogram(){
 
 
   TCanvas* c = new TCanvas();
-  StyleLogLog(c);
+  StyleLinearLinear(c);
   StyleTH1(energy1, kAzure, 2, kSolid, true, kDot, 1);
   energy1->GetYaxis()->SetRangeUser(1E0, 1E6);
   energy1->Draw("hist e");
@@ -179,10 +179,10 @@ void EnergyLossHistogram(){
   std::cout<< "N3 = " << N3 << std::endl;
   std::cout<< "N4 = " << N4 << std::endl;
   
-  TH1D* energyloss1 = new TH1D("h1", Form("EnergyLoss_%s",particleName.c_str()), 2000, 0, 20000);
-  TH1D* energyloss2 = new TH1D("h2", "kapton.co2.air", 2000, 0, 20000);
-  TH1D* energyloss3 = new TH1D("h3", "air_FullExperiment", 2000, 0, 20000);
-  TH1D* energyloss4 = new TH1D("h4", "He_FullExperiment", 2000, 0, 20000);
+  TH1D* energyloss1 = new TH1D("h1", Form("EnergyLoss_%s",particleName.c_str()), 30, 0, 30);
+  TH1D* energyloss2 = new TH1D("h2", "kapton.co2.air", 30, 0, 30);
+  TH1D* energyloss3 = new TH1D("h3", "air_FullExperiment", 30, 0, 30);
+  TH1D* energyloss4 = new TH1D("h4", "He_FullExperiment", 30, 0, 30);
 
   for (unsigned int i = 0; i < N1; i++) {
     analysisTree1->GetEntry(i);
@@ -210,7 +210,7 @@ void EnergyLossHistogram(){
 
 
   TCanvas* c = new TCanvas();
-  StyleLogLog(c);
+  StyleLinearLinear(c);
   StyleTH1(energyloss1, kAzure, 2, kSolid, true, kDot, 1);
   energyloss1->GetYaxis()->SetRangeUser(1E0, 1E6);
   energyloss1->Draw("hist e");
