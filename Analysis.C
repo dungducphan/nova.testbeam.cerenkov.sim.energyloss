@@ -27,17 +27,19 @@ void Analysis(std::string, unsigned int);
 void CountSignalSurvive(unsigned int);
 void EstimateEnergyLoss();
 void EnergyLossHistogram();
+void EnergyTry();
 
 void Analysis(std::string pName, unsigned int NumberOfEvents) {
   particleName = pName;
-  rootfile = new TFile(Form("Results/EnergyLoss_%s.root", particleName.c_str()), "READ");
+  rootfile = new TFile(Form("Results/0.52TOF/EnergyLoss_%s.root", particleName.c_str()), "READ");
   analysisTree = (TTree*) rootfile->Get("AnalysisTree");
   analysisTree->SetBranchAddress("Energy", &Energy, &b_Energy);
   analysisTree->SetBranchAddress("EnergyLoss", &EnergyLoss, &b_EnergyLoss);
 
   CountSignalSurvive(NumberOfEvents);
   EstimateEnergyLoss();
-//  EnergyLossHistogram();
+  EnergyLossHistogram();
+  EnergyTry();
 
   rootfile->Close();
 }
@@ -232,6 +234,49 @@ void EnergyLossHistogram() {
     histogramFile->cd();
     energyloss_100to500->Write(0, TObject::kOverwrite);
     energyloss_500to1k->Write(0, TObject::kOverwrite);
+    histogramFile->Write(0, TObject::kOverwrite);
+    histogramFile->Close();
+    delete(histogramFile);
+}
+
+
+void EnergyTry(){
+  GeneralStyle();
+  
+  unsigned int N = analysisTree->GetEntries();
+  std::vector<double> ELossBin = LogBins(60, 1.E0, 1.E3);
+
+  TH1D* energy = new TH1D(Form("e_%s", particleName.c_str()), ";Energy (MeV);Normalized Count", ELossBin.size() - 1, &ELossBin[0]);
+
+  unsigned int count = 0;
+  for (unsigned int i = 0; i < N; i++) {
+    analysisTree->GetEntry(i);
+    energy->Fill(Energy);
+  }
+
+
+
+    TCanvas* c = new TCanvas();
+    StyleLogLog(c);
+    StyleTH1(energy, kAzure, 2, kSolid, true, kDot, 1);
+    energy->GetYaxis()->SetRangeUser(1E-4,1E2);
+    energy->Draw("hist e");
+
+
+    
+  TLegend* leg = new TLegend(0.6, 0.65, 0.8, 0.85);
+    leg->AddEntry(energy, Form("%s", particleName.c_str()), "pl");
+  
+    leg->Draw();
+
+    c->Modified();
+    c->Update();
+    c->SaveAs(Form("Results/energy_%s.pdf", particleName.c_str()));
+
+    histogramFile = new TFile("histograms.root", "UPDATE");
+    histogramFile->cd();
+    energy->Write(0, TObject::kOverwrite);
+   
     histogramFile->Write(0, TObject::kOverwrite);
     histogramFile->Close();
     delete(histogramFile);

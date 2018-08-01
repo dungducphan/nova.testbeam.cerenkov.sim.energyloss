@@ -17,7 +17,7 @@ else()
   find_package(Geant4 REQUIRED)
 endif()
 
-find_package(ROOT REQUIRED)
+find_package(ROOT CONFIG REQUIRED)
 
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions

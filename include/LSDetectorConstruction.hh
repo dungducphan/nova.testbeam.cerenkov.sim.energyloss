@@ -51,7 +51,7 @@ private:
    */
   G4double tof_hx = 2 * m;
   G4double tof_hy = 2 * m;
-  G4double tof_hz = 10 * mm;
+  G4double tof_hz = 0.79 * 2.54 *cm;
   G4Box * tofBox;
   G4LogicalVolume * tofLog;
   G4VPhysicalVolume * tofPhy_us, * tofPhy_ds;
@@ -87,6 +87,8 @@ private:
   G4Material * fKapton;
   G4Material * fMylar;
   G4Material* fVacuum;
+  G4Material* fPVT;
+  G4Material* fHe;
 };
 
 

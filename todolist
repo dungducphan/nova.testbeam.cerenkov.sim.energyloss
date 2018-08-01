@@ -1,0 +1,15 @@
+Find out how to make VPT material for the TOF
+
+Figure out a better way to run beam macro
+
+Record position of beam on first TOF and second TOF, record percentage of beam splitting from 2nd TOF to 1st, and premade gaussian of the beam from macro
+
+Record Energy loss for each size of TOF and beam spread
+
+
+2.54 in to cm
+
+
+
+Just world simulation has TOF as sensitive detector, but it is just air.
+

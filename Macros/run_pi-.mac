@@ -1,0 +1,124 @@
+/gun/particle pi-
+/run/initialize
+/gun/energy 10.6101 MeV
+/run/beamOn 10000
+/gun/energy 11.9047 MeV
+/run/beamOn 10000
+/gun/energy 13.3573 MeV
+/run/beamOn 10000
+/gun/energy 14.9872 MeV
+/run/beamOn 10000
+/gun/energy 16.8159 MeV
+/run/beamOn 10000
+/gun/energy 18.8677 MeV
+/run/beamOn 10000
+/gun/energy 21.1699 MeV
+/run/beamOn 10000
+/gun/energy 23.7530 MeV
+/run/beamOn 10000
+/gun/energy 26.6513 MeV
+/run/beamOn 10000
+/gun/energy 29.9033 MeV
+/run/beamOn 10000
+/gun/energy 33.5521 MeV
+/run/beamOn 10000
+/gun/energy 37.6460 MeV
+/run/beamOn 10000
+/gun/energy 42.2395 MeV
+/run/beamOn 10000
+/gun/energy 47.3935 MeV
+/run/beamOn 10000
+/gun/energy 53.1764 MeV
+/run/beamOn 10000
+/gun/energy 59.6649 MeV
+/run/beamOn 10000
+/gun/energy 66.9452 MeV
+/run/beamOn 10000
+/gun/energy 75.1137 MeV
+/run/beamOn 10000
+/gun/energy 84.2790 MeV
+/run/beamOn 10000
+/gun/energy 94.5625 MeV
+/run/beamOn 10000
+/gun/energy 106.1009 MeV
+/run/beamOn 10000
+/gun/energy 119.0472 MeV
+/run/beamOn 10000
+/gun/energy 133.5731 MeV
+/run/beamOn 10000
+/gun/energy 149.8715 MeV
+/run/beamOn 10000
+/gun/energy 168.1586 MeV
+/run/beamOn 10000
+/gun/energy 188.6771 MeV
+/run/beamOn 10000
+/gun/energy 211.6992 MeV
+/run/beamOn 10000
+/gun/energy 237.5304 MeV
+/run/beamOn 10000
+/gun/energy 266.5135 MeV
+/run/beamOn 10000
+/gun/energy 299.0330 MeV
+/run/beamOn 10000
+/gun/energy 335.5206 MeV
+/run/beamOn 10000
+/gun/energy 376.4603 MeV
+/run/beamOn 10000
+/gun/energy 422.3954 MeV
+/run/beamOn 10000
+/gun/energy 473.9354 MeV
+/run/beamOn 10000
+/gun/energy 531.7643 MeV
+/run/beamOn 10000
+/gun/energy 596.6493 MeV
+/run/beamOn 10000
+/gun/energy 669.4516 MeV
+/run/beamOn 10000
+/gun/energy 751.1370 MeV
+/run/beamOn 10000
+/gun/energy 842.7896 MeV
+/run/beamOn 10000
+/gun/energy 945.6255 MeV
+/run/beamOn 10000
+/gun/energy 1061.0092 MeV
+/run/beamOn 10000
+/gun/energy 1190.4719 MeV
+/run/beamOn 10000
+/gun/energy 1335.7315 MeV
+/run/beamOn 10000
+/gun/energy 1498.7154 MeV
+/run/beamOn 10000
+/gun/energy 1681.5863 MeV
+/run/beamOn 10000
+/gun/energy 1886.7709 MeV
+/run/beamOn 10000
+/gun/energy 2116.9917 MeV
+/run/beamOn 10000
+/gun/energy 2375.3038 MeV
+/run/beamOn 10000
+/gun/energy 2665.1347 MeV
+/run/beamOn 10000
+/gun/energy 2990.3303 MeV
+/run/beamOn 10000
+/gun/energy 3355.2058 MeV
+/run/beamOn 10000
+/gun/energy 3764.6028 MeV
+/run/beamOn 10000
+/gun/energy 4223.9538 MeV
+/run/beamOn 10000
+/gun/energy 4739.3541 MeV
+/run/beamOn 10000
+/gun/energy 5317.6428 MeV
+/run/beamOn 10000
+/gun/energy 5966.4933 MeV
+/run/beamOn 10000
+/gun/energy 6694.5156 MeV
+/run/beamOn 10000
+/gun/energy 7511.3701 MeV
+/run/beamOn 10000
+/gun/energy 8427.8959 MeV
+/run/beamOn 10000
+/gun/energy 9456.2547 MeV
+/run/beamOn 10000
+/gun/energy 10083.2500 MeV
+/run/beamOn 10000

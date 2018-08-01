@@ -41,6 +41,8 @@ void EnergyLossHistogram();
 
 void compare(std::string pName, unsigned int NumberOfEvents) {
   particleName = pName;
+
+  //Results from different runs were placed in their own folders after ./join.sh
   rootfile1 = new TFile(Form("Results/world/EnergyLoss_%s.root",particleName.c_str()), "READ");
 
   rootfile2 = new TFile(Form("Results/kapton.c02.world/EnergyLoss_%s.root",particleName.c_str()), "READ");

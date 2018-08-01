@@ -1,5 +1,11 @@
 #include "LSDetectorConstruction.hh"
 #include "LSTOFSD.hh"
+#include "G4Material.hh"
+#include "G4MaterialTable.hh"
+#include "G4MaterialPropertiesTable.hh"
+#include "G4Element.hh"
+#include "G4ElementTable.hh"
+
 
 #include "G4SDManager.hh"
 
@@ -12,8 +18,19 @@ LSDetectorConstruction::~LSDetectorConstruction() {
 void LSDetectorConstruction::BuildMaterial() {
   G4NistManager * nist = G4NistManager::Instance();
 
+  G4int natoms, ncomponents;
+  G4double a, z, den;
+
+
+  G4Element* H = new G4Element("Hydrogen", "H", z=1, a  = 1.01*g/mole);
+  G4Element* C = new G4Element("Carbon", "C", z=6, a = 12.01*g/mole);
+
+  
   // Air
   fAir = nist->FindOrBuildMaterial("G4_AIR");
+
+  //Helium
+  fHe = nist->FindOrBuildMaterial("G4_He");
 
   // CO2
   fCO2 = nist->FindOrBuildMaterial("G4_CARBON_DIOXIDE");
@@ -30,6 +47,11 @@ void LSDetectorConstruction::BuildMaterial() {
   G4double pressure= 2.0e-7*bar;
   fVacuum = new G4Material("Vacuum", density, 1, kStateGas,temperature,pressure);
   fVacuum->AddMaterial(fAir, 1.);
+
+  //PolyvinylToulene TOF
+  fPVT = new G4Material("PVT", den=1.023*g/cm3, ncomponents=2, kStateSolid);
+  fPVT->AddElement(C, natoms=9);
+  fPVT->AddElement(H, natoms=10);
 
   return;
 }
@@ -50,7 +72,7 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
    * [Fake TOF]
    */
   tofBox = new G4Box("tofBox", tof_hx/2., tof_hy/2., tof_hz/2.);
-  tofLog = new G4LogicalVolume(tofBox, fVacuum, "tofLog", 0, 0, 0);
+  tofLog = new G4LogicalVolume(tofBox, fPVT, "tofLog", 0, 0, 0);
 
   /**
    * [Mirror]
@@ -68,7 +90,7 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
    * [World description]
    */
   worldBox = new G4Box("WorldBox", world_hx/2., world_hy/2., world_hz/2.);
-  worldLog = new G4LogicalVolume(worldBox, fAir, "WorldLog");
+  worldLog = new G4LogicalVolume(worldBox, fVacuum, "WorldLog");
 
 
   /**
