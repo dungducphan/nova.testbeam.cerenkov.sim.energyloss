@@ -223,6 +223,60 @@ src/LSActionInitialization.cc.s:
 	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.s
 .PHONY : src/LSActionInitialization.cc.s
 
+src/LSDETHit.o: src/LSDETHit.cc.o
+
+.PHONY : src/LSDETHit.o
+
+# target to build an object file
+src/LSDETHit.cc.o:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETHit.cc.o
+.PHONY : src/LSDETHit.cc.o
+
+src/LSDETHit.i: src/LSDETHit.cc.i
+
+.PHONY : src/LSDETHit.i
+
+# target to preprocess a source file
+src/LSDETHit.cc.i:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETHit.cc.i
+.PHONY : src/LSDETHit.cc.i
+
+src/LSDETHit.s: src/LSDETHit.cc.s
+
+.PHONY : src/LSDETHit.s
+
+# target to generate assembly for a file
+src/LSDETHit.cc.s:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETHit.cc.s
+.PHONY : src/LSDETHit.cc.s
+
+src/LSDETSD.o: src/LSDETSD.cc.o
+
+.PHONY : src/LSDETSD.o
+
+# target to build an object file
+src/LSDETSD.cc.o:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETSD.cc.o
+.PHONY : src/LSDETSD.cc.o
+
+src/LSDETSD.i: src/LSDETSD.cc.i
+
+.PHONY : src/LSDETSD.i
+
+# target to preprocess a source file
+src/LSDETSD.cc.i:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETSD.cc.i
+.PHONY : src/LSDETSD.cc.i
+
+src/LSDETSD.s: src/LSDETSD.cc.s
+
+.PHONY : src/LSDETSD.s
+
+# target to generate assembly for a file
+src/LSDETSD.cc.s:
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETSD.cc.s
+.PHONY : src/LSDETSD.cc.s
+
 src/LSDetectorConstruction.o: src/LSDetectorConstruction.cc.o
 
 .PHONY : src/LSDetectorConstruction.o
@@ -358,60 +412,6 @@ src/LSRunAction.cc.s:
 	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSRunAction.cc.s
 .PHONY : src/LSRunAction.cc.s
 
-src/LSTOFHit.o: src/LSTOFHit.cc.o
-
-.PHONY : src/LSTOFHit.o
-
-# target to build an object file
-src/LSTOFHit.cc.o:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o
-.PHONY : src/LSTOFHit.cc.o
-
-src/LSTOFHit.i: src/LSTOFHit.cc.i
-
-.PHONY : src/LSTOFHit.i
-
-# target to preprocess a source file
-src/LSTOFHit.cc.i:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFHit.cc.i
-.PHONY : src/LSTOFHit.cc.i
-
-src/LSTOFHit.s: src/LSTOFHit.cc.s
-
-.PHONY : src/LSTOFHit.s
-
-# target to generate assembly for a file
-src/LSTOFHit.cc.s:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFHit.cc.s
-.PHONY : src/LSTOFHit.cc.s
-
-src/LSTOFSD.o: src/LSTOFSD.cc.o
-
-.PHONY : src/LSTOFSD.o
-
-# target to build an object file
-src/LSTOFSD.cc.o:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o
-.PHONY : src/LSTOFSD.cc.o
-
-src/LSTOFSD.i: src/LSTOFSD.cc.i
-
-.PHONY : src/LSTOFSD.i
-
-# target to preprocess a source file
-src/LSTOFSD.cc.i:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFSD.cc.i
-.PHONY : src/LSTOFSD.cc.i
-
-src/LSTOFSD.s: src/LSTOFSD.cc.s
-
-.PHONY : src/LSTOFSD.s
-
-# target to generate assembly for a file
-src/LSTOFSD.cc.s:
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFSD.cc.s
-.PHONY : src/LSTOFSD.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -431,6 +431,12 @@ help:
 	@echo "... src/LSActionInitialization.o"
 	@echo "... src/LSActionInitialization.i"
 	@echo "... src/LSActionInitialization.s"
+	@echo "... src/LSDETHit.o"
+	@echo "... src/LSDETHit.i"
+	@echo "... src/LSDETHit.s"
+	@echo "... src/LSDETSD.o"
+	@echo "... src/LSDETSD.i"
+	@echo "... src/LSDETSD.s"
 	@echo "... src/LSDetectorConstruction.o"
 	@echo "... src/LSDetectorConstruction.i"
 	@echo "... src/LSDetectorConstruction.s"
@@ -446,12 +452,6 @@ help:
 	@echo "... src/LSRunAction.o"
 	@echo "... src/LSRunAction.i"
 	@echo "... src/LSRunAction.s"
-	@echo "... src/LSTOFHit.o"
-	@echo "... src/LSTOFHit.i"
-	@echo "... src/LSTOFHit.s"
-	@echo "... src/LSTOFSD.o"
-	@echo "... src/LSTOFSD.i"
-	@echo "... src/LSTOFSD.s"
 .PHONY : help
 
 

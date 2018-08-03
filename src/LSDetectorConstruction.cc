@@ -1,5 +1,5 @@
 #include "LSDetectorConstruction.hh"
-#include "LSTOFSD.hh"
+#include "LSDETSD.hh"
 #include "G4Material.hh"
 #include "G4MaterialTable.hh"
 #include "G4MaterialPropertiesTable.hh"
@@ -117,7 +117,7 @@ G4VPhysicalVolume * LSDetectorConstruction::Construct() {
 }
 
 void LSDetectorConstruction::ConstructSDandField() {
-  LSTOFSD* DETSD_ds = new LSTOFSD("DETSD");
+  LSDETSD* DETSD_ds = new LSDETSD("DETSD");
   G4SDManager::GetSDMpointer()->AddNewDetector(DETSD_ds);
 
   SetSensitiveDetector("detLog", DETSD_ds, true);

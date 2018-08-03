@@ -39,7 +39,7 @@ void LSPrimaryGeneratorAction::GeneratePrimaries(G4Event *anEvent) {
     // Randomize Start Position
     G4double fXStart, fYStart;
     GunRandomPosition(fXStart, fYStart);
-    fParticleGun->SetParticlePosition(G4ThreeVector(fXStart, fYStart, 2.5 * m));
+    fParticleGun->SetParticlePosition(G4ThreeVector(fXStart, fYStart, 5 * m));
 
     fParticleGun->GeneratePrimaryVertex(anEvent);
 }

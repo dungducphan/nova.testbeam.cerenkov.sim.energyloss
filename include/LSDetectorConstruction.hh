@@ -67,7 +67,7 @@ private:
   G4Box * detBox;
   G4LogicalVolume * detLog;
   G4VPhysicalVolume * detPhy_us, * detPhy_ds;
-  G4double det_z = world_hz/2 - 2*tof_hz/2;
+  G4double det_z = world_hz/2 - 2*det_hz/2;
 
 
   

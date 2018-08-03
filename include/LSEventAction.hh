@@ -9,12 +9,12 @@
 #include "globals.hh"
 
 #include "G4SDManager.hh"
-#include "LSTOFSD.hh"
-#include "LSTOFHit.hh"
+#include "LSDETSD.hh"
+#include "LSDETHit.hh"
 #include "G4SystemOfUnits.hh"
 
 class LSRunAction;
-class LSTOFHit;
+class LSDETHit;
 
 class LSEventAction : public G4UserEventAction {
 public:

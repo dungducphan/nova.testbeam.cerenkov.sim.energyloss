@@ -105,9 +105,57 @@ CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o.provides: CMakeFiles/LSsim.
 CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o
 
 
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.o: CMakeFiles/LSsim.dir/flags.make
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.o: src/LSDETHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LSsim.dir/src/LSDETHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSDETHit.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.cc
+
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LSsim.dir/src/LSDETHit.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.cc > CMakeFiles/LSsim.dir/src/LSDETHit.cc.i
+
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LSsim.dir/src/LSDETHit.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.cc -o CMakeFiles/LSsim.dir/src/LSDETHit.cc.s
+
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.requires:
+
+.PHONY : CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.requires
+
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.provides: CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.requires
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.provides.build
+.PHONY : CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.provides
+
+CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSDETHit.cc.o
+
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.o: CMakeFiles/LSsim.dir/flags.make
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.o: src/LSDETSD.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LSsim.dir/src/LSDETSD.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSDETSD.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.cc
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LSsim.dir/src/LSDETSD.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.cc > CMakeFiles/LSsim.dir/src/LSDETSD.cc.i
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LSsim.dir/src/LSDETSD.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.cc -o CMakeFiles/LSsim.dir/src/LSDETSD.cc.s
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.requires:
+
+.PHONY : CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.requires
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.provides: CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.requires
+	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.provides.build
+.PHONY : CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.provides
+
+CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSDETSD.cc.o
+
+
 CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o: CMakeFiles/LSsim.dir/flags.make
 CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o: src/LSDetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDetectorConstruction.cc
 
 CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.i: cmake_force
@@ -131,7 +179,7 @@ CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o.provides.build: CMakeFiles/
 
 CMakeFiles/LSsim.dir/src/LSEventAction.cc.o: CMakeFiles/LSsim.dir/flags.make
 CMakeFiles/LSsim.dir/src/LSEventAction.cc.o: src/LSEventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LSsim.dir/src/LSEventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LSsim.dir/src/LSEventAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSEventAction.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSEventAction.cc
 
 CMakeFiles/LSsim.dir/src/LSEventAction.cc.i: cmake_force
@@ -155,7 +203,7 @@ CMakeFiles/LSsim.dir/src/LSEventAction.cc.o.provides.build: CMakeFiles/LSsim.dir
 
 CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o: CMakeFiles/LSsim.dir/flags.make
 CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o: src/LSPhysicsList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSPhysicsList.cc
 
 CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.i: cmake_force
@@ -179,7 +227,7 @@ CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o.provides.build: CMakeFiles/LSsim.dir
 
 CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o: CMakeFiles/LSsim.dir/flags.make
 CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o: src/LSPrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSPrimaryGeneratorAction.cc
 
 CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.i: cmake_force
@@ -203,7 +251,7 @@ CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o.provides.build: CMakeFile
 
 CMakeFiles/LSsim.dir/src/LSRunAction.cc.o: CMakeFiles/LSsim.dir/flags.make
 CMakeFiles/LSsim.dir/src/LSRunAction.cc.o: src/LSRunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/LSsim.dir/src/LSRunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LSsim.dir/src/LSRunAction.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSRunAction.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSRunAction.cc
 
 CMakeFiles/LSsim.dir/src/LSRunAction.cc.i: cmake_force
@@ -225,78 +273,30 @@ CMakeFiles/LSsim.dir/src/LSRunAction.cc.o.provides: CMakeFiles/LSsim.dir/src/LSR
 CMakeFiles/LSsim.dir/src/LSRunAction.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSRunAction.cc.o
 
 
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o: CMakeFiles/LSsim.dir/flags.make
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o: src/LSTOFHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.cc
-
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LSsim.dir/src/LSTOFHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.cc > CMakeFiles/LSsim.dir/src/LSTOFHit.cc.i
-
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LSsim.dir/src/LSTOFHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.cc -o CMakeFiles/LSsim.dir/src/LSTOFHit.cc.s
-
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.requires:
-
-.PHONY : CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.requires
-
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.provides: CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.requires
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.provides.build
-.PHONY : CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.provides
-
-CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o
-
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o: CMakeFiles/LSsim.dir/flags.make
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o: src/LSTOFSD.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o -c /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.cc
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LSsim.dir/src/LSTOFSD.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.cc > CMakeFiles/LSsim.dir/src/LSTOFSD.cc.i
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LSsim.dir/src/LSTOFSD.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.cc -o CMakeFiles/LSsim.dir/src/LSTOFSD.cc.s
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.requires:
-
-.PHONY : CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.requires
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.provides: CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.requires
-	$(MAKE) -f CMakeFiles/LSsim.dir/build.make CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.provides.build
-.PHONY : CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.provides
-
-CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.provides.build: CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o
-
-
 # Object files for target LSsim
 LSsim_OBJECTS = \
 "CMakeFiles/LSsim.dir/LSsim.cc.o" \
 "CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o" \
+"CMakeFiles/LSsim.dir/src/LSDETHit.cc.o" \
+"CMakeFiles/LSsim.dir/src/LSDETSD.cc.o" \
 "CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o" \
 "CMakeFiles/LSsim.dir/src/LSEventAction.cc.o" \
 "CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o" \
 "CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o" \
-"CMakeFiles/LSsim.dir/src/LSRunAction.cc.o" \
-"CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o" \
-"CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o"
+"CMakeFiles/LSsim.dir/src/LSRunAction.cc.o"
 
 # External object files for target LSsim
 LSsim_EXTERNAL_OBJECTS =
 
 LSsim: CMakeFiles/LSsim.dir/LSsim.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o
+LSsim: CMakeFiles/LSsim.dir/src/LSDETHit.cc.o
+LSsim: CMakeFiles/LSsim.dir/src/LSDETSD.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSEventAction.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o
 LSsim: CMakeFiles/LSsim.dir/src/LSRunAction.cc.o
-LSsim: CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o
-LSsim: CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o
 LSsim: CMakeFiles/LSsim.dir/build.make
 LSsim: /usr/local/Geant4/lib/libG4Tree.so
 LSsim: /usr/local/Geant4/lib/libG4GMocren.so
@@ -368,13 +368,13 @@ CMakeFiles/LSsim.dir/build: LSsim
 
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/LSsim.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o.requires
+CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSDETHit.cc.o.requires
+CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSDETSD.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSEventAction.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o.requires
 CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSRunAction.cc.o.requires
-CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o.requires
-CMakeFiles/LSsim.dir/requires: CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o.requires
 
 .PHONY : CMakeFiles/LSsim.dir/requires
 

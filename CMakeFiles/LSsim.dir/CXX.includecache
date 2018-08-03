@@ -30,11 +30,27 @@ G4UIExecutive.hh
 LSActionInitialization.hh
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSActionInitialization.hh
 
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.cc
+LSDETHit.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.hh
+G4VVisManager.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4VVisManager.hh
+
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.cc
+LSDETSD.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.hh
+G4SDManager.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4SDManager.hh
+G4OpticalPhoton.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4OpticalPhoton.hh
+G4SystemOfUnits.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4SystemOfUnits.hh
+
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDetectorConstruction.cc
 LSDetectorConstruction.hh
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDetectorConstruction.hh
-LSTOFSD.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.hh
+LSDETSD.hh
+/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.hh
 G4Material.hh
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4Material.hh
 G4MaterialTable.hh
@@ -67,22 +83,6 @@ LSRunAction.hh
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSRunAction.hh
 cstring
 -
-G4SystemOfUnits.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4SystemOfUnits.hh
-
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.cc
-LSTOFHit.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.hh
-G4VVisManager.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4VVisManager.hh
-
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.cc
-LSTOFSD.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.hh
-G4SDManager.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4SDManager.hh
-G4OpticalPhoton.hh
-/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4OpticalPhoton.hh
 G4SystemOfUnits.hh
 /home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/G4SystemOfUnits.hh
 
@@ -8636,6 +8636,20 @@ include/LSRunAction.hh
 G4VUserActionInitialization.hh
 include/G4VUserActionInitialization.hh
 
+include/LSDETHit.hh
+G4VHit.hh
+include/G4VHit.hh
+G4ThreeVector.hh
+include/G4ThreeVector.hh
+G4THitsCollection.hh
+include/G4THitsCollection.hh
+
+include/LSDETSD.hh
+G4VSensitiveDetector.hh
+include/G4VSensitiveDetector.hh
+LSDETHit.hh
+include/LSDETHit.hh
+
 include/LSDetectorConstruction.hh
 G4VUserDetectorConstruction.hh
 include/G4VUserDetectorConstruction.hh
@@ -8675,10 +8689,10 @@ globals.hh
 include/globals.hh
 G4SDManager.hh
 include/G4SDManager.hh
-LSTOFSD.hh
-include/LSTOFSD.hh
-LSTOFHit.hh
-include/LSTOFHit.hh
+LSDETSD.hh
+include/LSDETSD.hh
+LSDETHit.hh
+include/LSDETHit.hh
 G4SystemOfUnits.hh
 include/G4SystemOfUnits.hh
 
@@ -8743,18 +8757,4 @@ TTree.h
 include/TTree.h
 TH1I.h
 include/TH1I.h
-
-include/LSTOFHit.hh
-G4VHit.hh
-include/G4VHit.hh
-G4ThreeVector.hh
-include/G4ThreeVector.hh
-G4THitsCollection.hh
-include/G4THitsCollection.hh
-
-include/LSTOFSD.hh
-G4VSensitiveDetector.hh
-include/G4VSensitiveDetector.hh
-LSTOFHit.hh
-include/LSTOFHit.hh
 

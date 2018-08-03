@@ -6,13 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/LSsim.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/LSsim.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSActionInitialization.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSActionInitialization.cc.o"
+  "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETHit.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSDETHit.cc.o"
+  "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDETSD.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSDETSD.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSDetectorConstruction.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSDetectorConstruction.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSEventAction.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSEventAction.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSPhysicsList.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSPhysicsList.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSPrimaryGeneratorAction.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSPrimaryGeneratorAction.cc.o"
   "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSRunAction.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSRunAction.cc.o"
-  "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFHit.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSTOFHit.cc.o"
-  "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/src/LSTOFSD.cc" "/home/bifox/research/geant4/nova.testbeam.cerenkov.sim.energyloss/CMakeFiles/LSsim.dir/src/LSTOFSD.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
